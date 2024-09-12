@@ -10,7 +10,7 @@ function PlaceForm({onCreatePlace}) {
 
     const [enteredTitle, setEnteredTitle] = useState('');
     const [selectedImage, setSelectedImage] = useState();
-    const [pickedLocation, setPickedLocation] = useState();
+    const [pickedLocation, setPickedLocation] = useState({});
 
     function changeTitleHandler(enteredTitle) {
         setEnteredTitle(enteredTitle);
@@ -25,9 +25,9 @@ function PlaceForm({onCreatePlace}) {
     }, []);
 
     function savePlaceHandler() {
-        // console.log(enteredTitle);
-        // console.log(selectedImage);
-        // console.log(pickedLocation);
+        console.log(enteredTitle);
+        console.log(selectedImage);
+        console.log(pickedLocation);
         const placeData = new Place(enteredTitle, selectedImage, pickedLocation);
         onCreatePlace(placeData);
     }
